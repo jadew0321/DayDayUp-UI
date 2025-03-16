@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日日打卡 - 习惯养成小程序原型</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="max-w-md mx-auto bg-white min-h-screen">
+        <!-- 页面导航 -->
+        <div class="sticky top-0 z-50 bg-white p-4 border-b border-gray-200">
+            <div class="flex justify-between items-center">
+                <h1 class="text-xl font-bold text-center">日日打卡原型</h1>
+            </div>
+            <div class="flex overflow-x-auto py-2 space-x-2 text-sm">
+                <button class="px-3 py-1 bg-blue-500 text-white rounded-full whitespace-nowrap">首页</button>
+                <button class="px-3 py-1 bg-gray-200 rounded-full whitespace-nowrap">习惯详情</button>
+                <button class="px-3 py-1 bg-gray-200 rounded-full whitespace-nowrap">数据统计</button>
+                <button class="px-3 py-1 bg-gray-200 rounded-full whitespace-nowrap">社区</button>
+                <button class="px-3 py-1 bg-gray-200 rounded-full whitespace-nowrap">我的</button>
+            </div>
+        </div>
+
+        <!-- 首页 -->
+        <section id="home" class="p-4">
+            <h2 class="text-lg font-bold mb-4">首页</h2>
+            
+            <!-- 今日概览 -->
+            <div class="bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl p-4 text-white mb-4">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-sm opacity-80">今天</p>
+                        <p class="text-xl font-bold">2023年11月15日 星期三</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-sm opacity-80">已完成</p>
+                        <p class="text-xl font-bold">3/5</p>
+                    </div>
+                </div>
+                <div class="mt-3 bg-white/20 h-2 rounded-full">
+                    <div class="bg-white h-2 rounded-full" style="width: 60%"></div>
+                </div>
+            </div>
+            
+            <!-- 月历视图 -->
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 mb-4">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="font-medium">2023年11月</h3>
+                    <div class="flex space-x-2">
+                        <button class="text-gray-400">◀</button>
+                        <button class="text-gray-400">▶</button>
+                    </div>
+                </div>
+                
+                <!-- 星期标题 -->
+                <div class="grid grid-cols-7 text-center text-xs text-gray-500 mb-2">
+                    <div>日</div>
+                    <div>一</div>
+                    <div>二</div>
+                    <div>三</div>
+                    <div>四</div>
+                    <div>五</div>
+                    <div>六</div>
+                </div>
+                
+                <!-- 日历格子 -->
+                <div class="grid grid-cols-7 gap-1">
+                    <!-- 第1行 -->
+                    <div class="h-8 flex items-center justify-center text-gray-300 text-sm">29</div>
+                    <div class="h-8 flex items-center justify-center text-gray-300 text-sm">30</div>
+                    <div class="h-8 flex items-center justify-center text-gray-300 text-sm">31</div>
+                    <div class="h-8 flex items-center justify-center text-sm">1</div>
+                    <div class="h-8 flex items-center justify-center text-sm">2</div>
+                    <div class="h-8 flex items-center justify-center text-sm">3</div>
+                    <div class="h-8 flex items-center justify-center text-sm">4</div>
+                    
+                    <!-- 第2行 -->
+                    <div class="h-8 flex items-center justify-center text-sm">5</div>
+                    <div class="h-8 flex items-center justify-center text-sm">6</div>
+                    <div class="h-8 flex items-center justify-center text-sm">7</div>
+                    <div class="h-8 flex items-center justify-center text-sm">8</div>
+                    <div class="h-8 flex items-center justify-center text-sm bg-green-100 rounded-full">9</div>
+                    <div class="h-8 flex items-center justify-center text-sm bg-green-100 rounded-full">10</div>
+                    <div class="h-8 flex items-center justify-center text-sm bg-green-100 rounded-full">11</div>
+                    
+                    <!-- 第3行 -->
+                    <div class="h-8 flex items-center justify-center text-sm bg-green-100 rounded-full">12</div>
+                    <div class="h-8 flex items-center justify-center text-sm bg-green-100 rounded-full">13</div>
+                    <div class="h-8 flex items-center justify-center text-sm bg-green-100 rounded-full">14</div>
+                    <div class="h-8 flex items-center justify-center text-sm bg-green-100 rounded-full">15</div>
+                    <div class="h-8 flex items-center justify-center text-sm">16</div>
+                    <div class="h-8 flex items-center justify-center text-sm">17</div>
+                    <div class="h-8 flex items-center justify-center text-sm">18</div>
+                    
+                    <!-- 第4行 -->
+                    <div class="h-8 flex items-center justify-center text-sm">19</div>
+                    <div class="h-8 flex items-center justify-center text-sm">20</div>
+                    <div class="h-8 flex items-center justify-center text-sm">21</div>
+                    <div class="h-8 flex items-center justify-center text-sm">22</div>
+                    <div class="h-8 flex items-center justify-center text-sm">23</div>
+                    <div class="h-8 flex items-center justify-center text-sm">24</div>
+                    <div class="h-8 flex items-center justify-center text-sm">25</div>
+                    
+                    <!-- 第5行 -->
+                    <div class="h-8 flex items-center justify-center text-sm">26</div>
+                    <div class="h-8 flex items-center justify-center text-sm">27</div>
+                    <div class="h-8 flex items-center justify-center text-sm">28</div>
+                    <div class="h-8 flex items-center justify-center text-sm">29</div>
+                    <div class="h-8 flex items-center justify-center text-sm">30</div>
+                    <div class="h-8 flex items-center justify-center text-gray-300 text-sm">1</div>
+                    <div class="h-8 flex items-center justify-center text-gray-300 text-sm">2</div>
+                </div>
+            </div>
+            
+            <!-- 习惯概览 -->
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 mb-4">
+                <h3 class="font-medium mb-3">我的习惯</h3>
+                <div class="flex overflow-x-auto space-x-3 pb-2">
+                    <div class="flex-shrink-0 w-16 flex flex-col items-center">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-1">
+                            <span class="text-green-500">🏃</span>
+                        </div>
+                        <p class="text-xs text-center">晨跑</p>
+                        <p class="text-xs text-green-500">已打卡</p>
+                    </div>
+                    
+                    <div class="flex-shrink-0 w-16 flex flex-col items-center">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-1">
+                            <span class="text-blue-500">📚</span>
+                        </div>
+                        <p class="text-xs text-center">阅读</p>
+                        <p class="text-xs text-blue-500">已打卡</p>
+                    </div>
+                    
+                    <div class="flex-shrink-0 w-16 flex flex-col items-center">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-1">
+                            <span class="text-purple-500">🧘</span>
+                        </div>
+                        <p class="text-xs text-center">冥想</p>
+                        <p class="text-xs text-gray-400">未打卡</p>
+                    </div>
+                    
+                    <div class="flex-shrink-0 w-16 flex flex-col items-center">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-1">
+                            <span class="text-yellow-500">💧</span>
+                        </div>
+                        <p class="text-xs text-center">喝水</p>
+                        <p class="text-xs text-yellow-500">已打卡</p>
+                    </div>
+                    
+                    <div class="flex-shrink-0 w-16 flex flex-col items-center">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-1">
+                            <span class="text-red-500">🍎</span>
+                        </div>
+                        <p class="text-xs text-center">健康饮食</p>
+                        <p class="text-xs text-gray-400">未打卡</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 创建习惯表单 -->
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 mb-4">
+                <h3 class="font-medium mb-3">创建新习惯</h3>
+                
+                <form class="space-y-4">
+                    <!-- 习惯名称 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">习惯名称</label>
+                        <input type="text" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="例如：晨跑5公里">
+                    </div>
+                    
+                    <!-- 图标选择 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">选择图标</label>
+                        <div class="grid grid-cols-6 gap-2">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">🏃</div>
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">📚</div>
+                            <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">💧</div>
+                            <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">🧘</div>
+                            <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">🍎</div>
+                            <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">+</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 颜色选择 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">选择颜色</label>
+                        <div class="flex space-x-2">
+                            <div class="w-8 h-8 bg-blue-500 rounded-full"></div>
+                            <div class="w-8 h-8 bg-green-500 rounded-full"></div>
+                            <div class="w-8 h-8 bg-yellow-500 rounded-full"></div>
+                            <div class="w-8 h-8 bg-purple-500 rounded-full"></div>
+                            <div class="w-8 h-8 bg-red-500 rounded-full"></div>
+                            <div class="w-8 h-8 bg-gray-500 rounded-full"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 重复频率 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">重复频率</label>
+                        <div class="flex flex-wrap gap-2">
+                            <button type="button" class="px-3 py-1 bg-blue-500 text-white rounded-full text-sm">每天</button>
+                            <button type="button" class="px-3 py-1 bg-gray-200 rounded-full text-sm">工作日</button>
+                            <button type="button" class="px-3 py-1 bg-gray-200 rounded-full text-sm">周末</button>
+                            <button type="button" class="px-3 py-1 bg-gray-200 rounded-full text-sm">自定义</button>
+                        </div>
+                    </div>
+                    
+                    <!-- 提醒时间 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">提醒时间</label>
+                        <div class="flex items-center">
+                            <input type="time" class="p-3 border border-gray-300 rounded-lg" value="06:00">
+                            <span class="mx-2">-</span>
+                            <input type="time" class="p-3 border border-gray-300 rounded-lg" value="08:00">
+                        </div>
+                    </div>
+                    
+                    <!-- 目标 -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">目标</label>
+                        <input type="text" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="例如：每天跑步5公里">
+                    </div>
+                    
+                    <!-- 提交按钮 -->
+                    <button type="submit" class="w-full py-3 bg-blue-500 text-white rounded-lg font-medium">创建习惯</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- 习惯详情页 -->
+        <section id="habit-detail" class="p-4 hidden">
+            <div class="flex items-center mb-4">
+                <button class="mr-2 text-gray-500">←</button>
+                <h2 class="text-lg font-bold">晨跑5公里</h2>
+            </div>
+            
+            <!-- 习惯信息 -->
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 mb-4">
+                <div class="flex items-center mb-3">
+                    <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                        <span class="text-green-500">🏃</span>
+                    </div>
+                    <div>
+                        <h3 class="font-medium">晨跑5公里</h3>
+                        <p class="text-xs text-gray-500">每天 06:00-08:00</p>
+                    </div>
+                </div>
+                <div class="flex justify-between text-sm text-gray-500 mt-2">
+                    <div>
+                        <p>总计打卡</p>
+                        <p class="font-bold text-black">28天</p>
+                    </div>
+                    <div>
+                        <p>当前连续</p>
+                        <p class="font-bold text-black">7天</p>
+                    </div>
+                    <div>
+                        <p>最长连续</p>
+                        <p class="font-bold text-black">14天</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 习惯列表 -->
+            <div class="space-y-3 mb-6">
+                <h3 class="font-medium mb-3">今日习惯</h3>
+                
+                <!-- 习惯项1 -->
+                <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-green-500">🏃</span>
+                            </div>
+                            <div>
+                                <h3 class="font-medium">晨跑5公里</h3>
+                                <p class="text-xs text-gray-500">已坚持 28 天，当前连续 7 天</p>
+                            </div>
+                        </div>
+                        <button class="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center">
+                            ✓
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- 习惯项2 -->
+                <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-blue-500">📚</span>
+                            </div>
+                            <div>
+                                <h3 class="font-medium">阅读30分钟</h3>
+                                <p class="text-xs text-gray-500">已坚持 45 天，当前连续 12 天</p>
+                            </div>
+                        </div>
+                        <button class="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center">
+                            ✓
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- 习惯项3 -->
+                <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-purple-500">🧘</span>
+                            </div>
+                            <div>
+                                <h3 class="font-medium">冥想15分钟</h3>
+                                <p class="text-xs text-gray-500">已坚持 15 天，当前连续 3 天</p>
+                            </div>
+                        </div>
+                        <button class="w-12 h-12 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center">
+                            ✓
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- 习惯项4 -->
+                <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-yellow-500">💧</span>
+                            </div>
+                            <div>
+                                <h3 class="font-medium">喝水2000ml</h3>
+                                <p class="text-xs text-gray-500">已坚持 60 天，当前连续 60 天</p>
+                            </div>
+                        </div>
+                        <button class="w-12 h-12 bg-yellow-500 text-white rounded-full flex items-center justify-center">
+                            ✓
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- 习惯项5 -->
+                <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-red-500">🍎</span>
+                            </div>
+                            <div>
+                                <h3 class="font-medium">健康饮食</h3>
+                                <p class="text-xs text-gray-500">已坚持 20 天，当前连续 5 天</p>
+                            </div>
+                        </div>
+                        <button class="w-12 h-12 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center">
+                            ✓
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 打卡记录 -->
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                <h3 class="font-medium mb-3">打卡记录</h3>
+                
+                <div class="space-y-3">
+                    <!-- 记录项 -->
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-100 rounded-lg overflow-hidden mr-3">
+                            <img src="https://images.unsplash.com/photo-1502904550040-7534597429ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="打卡照片" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm">今天的5公里完成了，感觉很棒！</p>
+                            <p class="text-xs text-gray-500">2023-11-15 07:23</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-100 rounded-lg overflow-hidden mr-3">
+                            <img src="https://images.unsplash.com/photo-1571008887538-b36bb32f4571?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="打卡照片" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm">今天跑得有点累，但还是坚持完成了</p>
+                            <p class="text-xs text-gray-500">2023-11-14 07:45</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-100 rounded-lg overflow-hidden mr-3">
+                            <img src="https://images.unsplash.com/photo-1560073562-f4b5089321ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="打卡照片" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm">早晨的空气真好，跑步很舒服</p>
+                            <p class="text-xs text-gray-500">2023-11-13 06:58</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 数据统计页 -->
+        <section id="statistics" class="p-4 hidden">
+            <h2 class="text-lg font-bold mb-4">数据统计</h2>
+            
+            <!-- 总体概览 -->
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 mb-4">
+                <h3 class="font-medium mb-3">总体概览</h3>
+                <div class="grid grid-cols-3 gap-2 text-center">
+                    <div class="p-2">
+                        <p class="text-xs text-gray-500">习惯总数</p>
+                        <p class="text-xl font-bold text-blue-500">5</p>
+                    </div>
+                    <div class="p-2">
+                        <p class="text-xs text-gray-500">总打卡天数</p>
+                        <p class="text-xl font-bold text-blue-500">168</p>
+                    </div>
+                    <div class="p-2">
+                        <p class="text-xs text-gray-500">完成率</p>
+                        <p class="text-xl font-bold text-blue-500">87%</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 习惯完成率 -->
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 mb-4">
+                <h3 class="font-medium mb-3">习惯完成率</h3>
+                
+                <!-- 图表占位 -->
+                <div class="h-40 bg-gray-50 rounded-lg flex items-center justify-center mb-3">
+                    <p class="text-gray-400">图表区域</p>
+                </div>
+                
+                <!-- 习惯列表 -->
+                <div class="space-y-2">
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-2">
+                            <span class="text-green-500">🏃</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between">
+                                <p class="text-sm">晨跑5公里</p>
+                                <p class="text-sm font-medium">85%</p>
+                            </div>
+                            <div class="w-full bg-gray-200 h-2 rounded-full mt-1">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-2">
+                            <span class="text-blue-500">📚</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between">
+                                <p class="text-sm">阅读30分钟</p>
+                                <p class="text-sm font-medium">92%</p>
+                            </div>
+                            <div class="w-full bg-gray-200 h-2 rounded-full mt-1">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center mr-2">
+                            <span class="text-yellow-500">💧</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between">
+                                <p class="text-sm">喝水2000ml</p>
+                                <p class="text-sm font-medium">100%</p>
+                            </div>
+                            <div class="w-full bg-gray-200 h-2 rounde
+                            d-full mt-1">
+                                <div class="bg-yellow-500 h-2 rounded-full" style="width: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 月度趋势 -->
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                <h3 class="font-medium mb-3">月度趋势</h3>
+                
+                <!-- 图表占位 -->
+                <div class="h-40 bg-gray-50 rounded-lg flex items-center justify-center">
+                    <p class="text-gray-400">趋势图表区域</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 社区页 -->
+        <section id="community" class="p-4 hidden">
+            <h2 class="text-lg font-bold mb-4">社区</h2>
+            
+            <!-- 好友排行 -->
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 mb-4">
+                <h3 class="font-medium mb-3">好友排行</h3>
+                
+                <div class="space-y-3">
+                    <!-- 排行项 -->
+                    <div class="flex items-center">
+                        <div class="w-6 text-center font-bold mr-2">1</div>
+                        <div class="w-10 h-10 rounded-full overflow-hidden mr-3">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="用户头像" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-medium">小明</p>
+                            <p class="text-xs text-gray-500">连续打卡 45 天</p>
+                        </div>
+                        <div class="text-yellow-500">🏆</div>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <div class="w-6 text-center font-bold mr-2">2</div>
+                        <div class="w-10 h-10 rounded-full overflow-hidden mr-3">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="用户头像" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-medium">小红</p>
+                            <p class="text-xs text-gray-500">连续打卡 38 天</p>
+                        </div>
+                        <div class="text-gray-300">🥈</div>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <div class="w-6 text-center font-bold mr-2">3</div>
+                        <div class="w-10 h-10 rounded-full overflow-hidden mr-3">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="用户头像" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-medium">小李</p>
+                            <p class="text-xs text-gray-500">连续打卡 32 天</p>
+                        </div>
+                        <div class="text-yellow-700">🥉</div>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <div class="w-6 text-center font-bold mr-2">4</div>
+                        <div class="w-10 h-10 rounded-full overflow-hidden mr-3">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="用户头像" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-medium">小张</p>
+                            <p class="text-xs text-gray-500">连续打卡 28 天</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 打卡动态 -->
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                <h3 class="font-medium mb-3">打卡动态</h3>
+                
+                <div class="space-y-4">
+                    <!-- 动态项 -->
+                    <div>
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full overflow-hidden mr-2">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="用户头像" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium">小明</p>
+                                <p class="text-xs text-gray-500">10分钟前</p>
+                            </div>
+                        </div>
+                        <div class="ml-10">
+                            <p class="text-sm mb-2">今天的晨跑完成啦，感觉超棒！#晨跑5公里#</p>
+                            <div class="w-full h-40 bg-gray-100 rounded-lg overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1502904550040-7534597429ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="打卡照片" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex items-center mt-2 text-gray-500 text-sm">
+                                <button class="flex items-center mr-4">
+                                    <span class="mr-1">👍</span> 点赞 (12)
+                                </button>
+                                <button class="flex items-center">
+                                    <span class="mr-1">💬</span> 评论 (3)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex items-center mb-2">
+                            <div class="w-8 h-8 rounded-full overflow-hidden mr-2">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="用户头像" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium">小红</p>
+                                <p class="text-xs text-gray-500">30分钟前</p>
+                            </div>
+                        </div>
+                        <div class="ml-10">
+                            <p class="text-sm mb-2">今天读完了一本好书，推荐给大家！#阅读30分钟#</p>
+                            <div class="w-full h-40 bg-gray-100 rounded-lg overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="打卡照片" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex items-center mt-2 text-gray-500 text-sm">
+                                <button class="flex items-center mr-4">
+                                    <span class="mr-1">👍</span> 点赞 (8)
+                                </button>
+                                <button class="flex items-center">
+                                    <span class="mr-1">💬</span> 评论 (2)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 个人中心页 -->
+        <section id="profile" class="p-4 hidden">
+            <h2 class="text-lg font-bold mb-4">个人中心</h2>
+            
+            <!-- 用户信息 -->
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 mb-4">
+                <div class="flex items-center">
+                    <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="用户头像" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h3 class="font-medium">用户名</h3>
+                        <p class="text-xs text-gray-500">已加入 120 天</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-3 gap-2 text-center mt-4">
+                    <div class="p-2">
+                        <p class="text-xs text-gray-500">习惯总数</p>
+                        <p class="text-xl font-bold text-blue-500">5</p>
+                    </div>
+                    <div class="p-2">
+                        <p class="text-xs text-gray-500">总打卡天数</p>
+                        <p class="text-xl font-bold text-blue-500">168</p>
+                    </div>
+                    <div class="p-2">
+                        <p class="text-xs text-gray-500">成就数</p>
+                        <p class="text-xl font-bold text-blue-500">12</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 我的成就 -->
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 mb-4">
+                <h3 class="font-medium mb-3">我的成就</h3>
+                
+                <div class="grid grid-cols-4 gap-2">
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-1">
+                            🏆
+                        </div>
+                        <p class="text-xs text-center">连续7天</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-1">
+                            🏅
+                        </div>
+                        <p class="text-xs text-center">连续30天</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-1">
+                            🎯
+                        </div>
+                        <p class="text-xs text-center">全勤一周</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mb-1 text-gray-400">
+                            🔒
+                        </div>
+                        <p class="text-xs text-center text-gray-400">待解锁</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 设置选项 -->
+            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                <h3 class="font-medium mb-3">设置</h3>
+                
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                        <p>通知设置</p>
+                        <span class="text-gray-400">></span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                        <p>隐私设置</p>
+                        <span class="text-gray-400">></span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                        <p>账号安全</p>
+                        <span class="text-gray-400">></span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                        <p>关于我们</p>
+                        <span class="text-gray-400">></span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center py-2">
+                        <p class="text-red-500">退出登录</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 底部导航栏 -->
+        <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-2 flex justify-around items-center">
+            <button class="flex flex-col items-center p-1 text-blue-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                <span class="text-xs">首页</span>
+            </button>
+            
+            <button class="flex flex-col items-center p-1 text-gray-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+                <span class="text-xs">统计</span>
+            </button>
+            
+            <button class="flex flex-col items-center p-1 text-gray-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7 a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                <span class="text-xs">社区</span>
+                </button>
+                <button class="flex flex-col items-center p-1 text-gray-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+                <span class="text-xs">我的</span>
+                </button>
+                </div>
+                </div>
+                <script>
+                // 简单的页面切换逻辑
+                document.addEventListener('DOMContentLoaded', function() {
+                // 默认显示首页
+                document.getElementById('home').classList.remove('hidden');
+                // 页面导航按钮点击事件
+                const navButtons = document.querySelectorAll('.sticky button');
+                navButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                // 隐藏所有页面
+                document.querySelectorAll('section').forEach(section => {
+                section.classList.add('hidden');
+                });
+                // 重置所有导航按钮样式
+                navButtons.forEach(btn => {
+                btn.classList.remove('bg-blue-500', 'text-white');
+                btn.classList.add('bg-gray-200');
+                });
+                // 设置当前按钮样式
+                this.classList.remove('bg-gray-200');
+                this.classList.add('bg-blue-500', 'text-white');
+                // 显示对应页面
+                const pageId = this.textContent.trim();
+                if (pageId === '首页') {
+                document.getElementById('home').classList.remove('hidden');
+                } else if (pageId === '习惯详情') {
+                document.getElementById('habit-detail').classList.remove('hidden');
+                } else if (pageId === '数据统计') {
+                document.getElementById('statistics').classList.remove('hidden');
+                } else if (pageId === '社区') {
+                document.getElementById('community').classList.remove('hidden');
+                } else if (pageId === '我的') {
+                document.getElementById('profile').classList.remove('hidden');
+                }
+                });
+                });
+                // 底部导航栏点击事件
+                const bottomNavButtons = document.querySelectorAll('.fixed.bottom-0 button');
+                bottomNavButtons.forEach((button, index) => {
+                button.addEventListener('click', function() {
+                // 隐藏所有页面
+                document.querySelectorAll('section').forEach(section => {
+                section.classList.add('hidden');
+                });
+                // 重置所有底部导航按钮样式
+                bottomNavButtons.forEach(btn => {
+                btn.classList.remove('text-blue-500');
+                btn.classList.add('text-gray-500');
+                });
+                // 设置当前按钮样式
+                this.classList.remove('text-gray-500');
+                this.classList.add('text-blue-500');
+                // 显示对应页面
+                if (index === 0) {
+                document.getElementById('home').classList.remove('hidden');
+                } else if (index === 1) {
+                document.getElementById('statistics').classList.remove('hidden');
+                } else if (index === 2) {
+                document.getElementById('community').classList.remove('hidden');
+                } else if (index === 3) {
+                document.getElementById('profile').classList.remove('hidden');
+                }
+                });
+                });
+                });
+                </script>
+                </body>
+                </html>
